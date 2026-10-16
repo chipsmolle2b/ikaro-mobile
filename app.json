@@ -1,0 +1,44 @@
+{
+  "expo": {
+    "name": "IKARO",
+    "slug": "ikaro-mobile",
+    "version": "1.0.0",
+    "scheme": "ikaromobile",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "newArchEnabled": true,
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 180,
+          "resizeMode": "contain",
+          "backgroundColor": "#00060a"
+        }
+      ]
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "fr.chipsmolle2bprod.ikaro",
+      "buildNumber": "1"
+    },
+    "android": {
+      "package": "fr.chipsmolle2bprod.ikaro",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "backgroundColor": "#00060a",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    }
+  }
+}

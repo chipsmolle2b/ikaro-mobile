@@ -1,0 +1,16 @@
+export const theme = {
+  bg: "#00060a",
+  dark: "#000d14",
+  barBg: "#011520",
+  pri: "#00d4ff",
+  priDim: "#007a99",
+  priGhost: "#001f2e",
+  acc: "#ff6b00",
+  acc2: "#ffcc00",
+  green: "#00ff88",
+  muted: "#ff3366",
+  text: "#8ffcff",
+  white: "#d8f8ff",
+  border: "#0d3347",
+  borderB: "#1a5c7a",
+};
