@@ -63,6 +63,10 @@ export default function LoginScreen() {
           onChangeText={setPassword}
         />
 
+        <Link href="/(auth)/forgot-password">
+          <Text style={styles.forgotLink}>Mot de passe oublie ?</Text>
+        </Link>
+
         {error && <Text style={styles.error}>{error}</Text>}
 
         <TouchableOpacity style={styles.button} onPress={onSubmit} disabled={loading}>
@@ -104,6 +108,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
   },
   error: { color: theme.muted, fontSize: 13 },
+  forgotLink: { color: theme.pri, fontSize: 12, textAlign: "right", marginTop: -4 },
   button: { backgroundColor: theme.pri, borderRadius: 8, paddingVertical: 12, alignItems: "center", marginTop: 4 },
   buttonText: { color: theme.dark, fontWeight: "600" },
   footerRow: { flexDirection: "row", justifyContent: "center", marginTop: 8 },

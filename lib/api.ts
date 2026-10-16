@@ -60,6 +60,10 @@ export interface ChatResponse {
   reply: string;
 }
 
+export interface MessageResponse {
+  message: string;
+}
+
 export const api = {
   signup: (email: string, password: string) =>
     request<TokenResponse>("/auth/signup", {
@@ -80,5 +84,17 @@ export const api = {
       method: "POST",
       token,
       body: JSON.stringify({ persona, message, history }),
+    }),
+
+  forgotPassword: (email: string) =>
+    request<MessageResponse>("/auth/forgot-password", {
+      method: "POST",
+      body: JSON.stringify({ email }),
+    }),
+
+  resetPassword: (email: string, code: string, newPassword: string) =>
+    request<MessageResponse>("/auth/reset-password", {
+      method: "POST",
+      body: JSON.stringify({ email, code, new_password: newPassword }),
     }),
 };

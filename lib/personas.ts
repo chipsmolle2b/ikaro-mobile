@@ -11,6 +11,8 @@ export interface Persona {
   name: string;
   tagline: string;
   description: string;
+  /** Couleur d'accent utilisee pour l'avatar et les elements mis en valeur de cette persona. */
+  color: string;
 }
 
 export const PERSONAS: Persona[] = [
@@ -20,6 +22,7 @@ export const PERSONAS: Persona[] = [
     tagline: "Chaleureuse et directe",
     description:
       "Ara va droit au but, avec une touche de chaleur humaine. Ideale pour du conseil rapide et des discussions du quotidien.",
+    color: "#00d4ff",
   },
   {
     id: "iris",
@@ -27,6 +30,7 @@ export const PERSONAS: Persona[] = [
     tagline: "Precise et organisee",
     description:
       "Iris excelle dans l'organisation, la planification et les reponses structurees. Parfaite pour s'organiser ou clarifier une idee.",
+    color: "#7a5cff",
   },
   {
     id: "phoenix",
@@ -34,6 +38,7 @@ export const PERSONAS: Persona[] = [
     tagline: "Energique et motivante",
     description:
       "Phoenix pousse a l'action avec enthousiasme. Ideale pour se motiver, avancer sur un projet ou sortir d'un blocage.",
+    color: "#ff6b00",
   },
   {
     id: "itoko",
@@ -41,6 +46,7 @@ export const PERSONAS: Persona[] = [
     tagline: "Douce et a l'ecoute",
     description:
       "Itoko privilegie l'ecoute et la douceur. Ideale pour parler calmement, reflechir a voix haute ou decompresser.",
+    color: "#00ff88",
   },
   {
     id: "lumiere",
@@ -48,6 +54,7 @@ export const PERSONAS: Persona[] = [
     tagline: "Creative et inspirante",
     description:
       "Lumiere apporte des idees originales et un regard createur. Ideale pour brainstormer ou explorer une idee sous un autre angle.",
+    color: "#ffcc00",
   },
   {
     id: "dedale",
@@ -55,5 +62,6 @@ export const PERSONAS: Persona[] = [
     tagline: "Analytique et rigoureux",
     description:
       "Dedale raisonne pas a pas avec rigueur. Ideal pour du code, des raisonnements complexes ou des explications techniques.",
+    color: "#ff3366",
   },
 ];

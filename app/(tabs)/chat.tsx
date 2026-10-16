@@ -15,6 +15,7 @@ import { api, ApiError, ChatMessage } from "@/lib/api";
 import { useAuth } from "@/lib/AuthContext";
 import { PERSONAS, PersonaId } from "@/lib/personas";
 import { theme } from "@/lib/theme";
+import { PersonaAvatar } from "@/components/PersonaAvatar";
 
 type Thread = Record<PersonaId, ChatMessage[]>;
 
@@ -98,6 +99,7 @@ export default function ChatScreen() {
               p.id === persona && { borderColor: theme.borderB, backgroundColor: theme.priGhost },
             ]}
           >
+            <PersonaAvatar persona={p} size={24} active={p.id === persona} />
             <Text style={{ color: p.id === persona ? theme.pri : theme.text, fontWeight: "600" }}>
               {p.name}
             </Text>
@@ -109,8 +111,11 @@ export default function ChatScreen() {
       </ScrollView>
 
       <View style={styles.header}>
-        <Text style={styles.headerTitle}>{current.name}</Text>
-        <Text style={styles.headerSubtitle}>{current.description}</Text>
+        <PersonaAvatar persona={current} size={44} active />
+        <View style={{ flex: 1 }}>
+          <Text style={styles.headerTitle}>{current.name}</Text>
+          <Text style={styles.headerSubtitle}>{current.description}</Text>
+        </View>
       </View>
 
       <FlatList
@@ -159,14 +164,23 @@ const styles = StyleSheet.create({
   screen: { flex: 1, backgroundColor: theme.bg },
   personaRow: { flexGrow: 0, paddingVertical: 10, borderBottomWidth: 1, borderBottomColor: theme.border },
   personaChip: {
-    paddingHorizontal: 12,
-    paddingVertical: 8,
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 6,
+    paddingHorizontal: 10,
+    paddingVertical: 6,
     borderRadius: 20,
     borderWidth: 1,
     borderColor: "transparent",
   },
   logoutChip: { paddingHorizontal: 12, paddingVertical: 8, justifyContent: "center" },
-  header: { paddingHorizontal: 16, paddingVertical: 10 },
+  header: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 12,
+    paddingHorizontal: 16,
+    paddingVertical: 10,
+  },
   headerTitle: { color: theme.pri, fontWeight: "700", fontSize: 16 },
   headerSubtitle: { color: theme.text, fontSize: 12, marginTop: 2 },
   empty: { color: theme.text, textAlign: "center", marginTop: 40 },
